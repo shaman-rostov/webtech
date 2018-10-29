@@ -7,7 +7,7 @@ describe("Test index", function() {
         index.table.should.have.property("leg",4)
     })
     it("function", function() {
-        index.fib.chai.assert.equal(21,fib(8))
+        index.fib.assert.equal(fib(8),21)
 
     })
     it("class", function() {

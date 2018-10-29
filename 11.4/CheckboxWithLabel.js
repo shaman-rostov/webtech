@@ -18,7 +18,7 @@ export default class CheckboxWithLabel extends React.Component {
 
     render() {
         return (
-                <input onChange={this.handleChange} type="checkbox"  text={this.state.isToggleOn ? this.labelOn : this.labelOff} />
+                <label><input onChange={this.handleChange} type="checkbox"  />{this.state.isToggleOn ? this.labelOn : this.labelOff} </label>
 
         );
     }
