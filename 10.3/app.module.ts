@@ -1,0 +1,1 @@
+import { HelloComponent } from "./hello.component";
