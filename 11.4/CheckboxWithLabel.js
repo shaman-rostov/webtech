@@ -4,21 +4,25 @@ import ReactDOM from 'react-dom';
 export default class CheckboxWithLabel extends React.Component {
     constructor(props) {
         super(props);
-        this.labelOn = "On";
-        this.labelOff = "Off";
-        this.state = {isToggleOn: false};
-        this.handleChange = this.handleChange.bind(this);
+        this.state={isChecked:false}
+        this.onChange = this.onChange.bind(this);
+         }
 
-    }
-
-    handleChange() {
-        this.setState(prevState => ({isToggleOn: !prevState.isToggleOn}));
+    onChange() {
+        this.setState({isChecked: !this.state.isChecked});
     }
 
 
     render() {
         return (
-                <label><input onChange={this.handleChange} type="checkbox"  />{this.state.isToggleOn ? this.labelOn : this.labelOff} </label>
+                <label>
+                    <input
+                        type="checkbox"
+                        checked={this.state.isChecked}
+                        onChange={this.onChange}
+                    />
+                    {this.state.isChecked ? this.props.labelOn : this.props.labelOff}
+                    </label>
 
         );
     }
